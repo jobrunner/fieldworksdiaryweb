@@ -9,7 +9,15 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'CXTO_LOYpYkAj7TKKcZpjlBsulvjbT5U',
+            'cookieValidationKey' => 'TiAvSKt1htIitfc2ri3w',
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+         // 'enableStrictParsing' => true,
+            'showScriptName' => false,
+            'rules' => [
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'service'],
+            ],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -37,7 +45,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => require(__DIR__ . '/db.php'),
+//        'db' => require(__DIR__ . '/db-dev.php'),
     ],
     'params' => $params,
 ];
@@ -46,9 +54,16 @@ if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = 'yii\debug\Module';
-
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = 'yii\gii\Module';
+    $config['components']['request']['cookieValidationKey'] = 'TiAvSKt1htIitfc2ri3w';
+    $config['components']['db'] = require(__DIR__ . '/db.php');
+} elseif (YII_ENV_INTEGRATION) {
+    $config['components']['request']['cookieValidationKey'] = 'TiAvSKt1htIitfc2ri3w';
+    $config['components']['db'] = require(__DIR__ . '/db.php');
+} elseif (YII_ENV_QA) {
+    $config['components']['request']['cookieValidationKey'] = 'TiAvSKt1htIitfc2ri3w';
+    $config['components']['db'] = require(__DIR__ . '/db.php');
 }
 
 return $config;

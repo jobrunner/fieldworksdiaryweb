@@ -27,6 +27,9 @@
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*"
     },
+    "autoload": {
+            "psr-0": {"": ["lib/"]}
+    },
     "suggest": {
         "codeception/codeception": "Codeception, 2.0.* is currently works well with Yii.",
         "codeception/specify": "BDD style code blocks for PHPUnit and Codeception",

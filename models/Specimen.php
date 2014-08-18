@@ -13,10 +13,10 @@ use Yii;
  * @property string $specimenId
  * @property string $country
  * @property string $countryCodeIso
- * @property string $administrative_area_level_1
- * @property string $administrative_area_level_2
- * @property string $administrative_area_level_3
- * @property string $locality
+ * @property string $administrative_area_level_1 // administrativeArea
+ * @property string $administrative_area_level_2 // subAdministrativeArea
+ * @property string $administrative_area_level_3 // administrativeLocality
+ * @property string $locality                    // administrativeSubLocality
  * @property string $sublocality
  * @property double $latitude
  * @property double $longitude
@@ -134,19 +134,19 @@ class Specimen extends \yii\db\ActiveRecord
             'specimenId' => Yii::t('app', 'Your reference'),
             'country' => Yii::t('app', 'Country'),
             'countryCodeIso' => Yii::t('app', 'Country Code Iso'),
-            'administrative_area_level_1' => Yii::t('app', 'administrativeArea (z.B. Bavaria)'),
-            'administrative_area_level_2' => Yii::t('app', 'sub administrative area (z.B. Würzburg)'),
-            'administrative_area_level_3' => Yii::t('app', 'Administrative Area Level 3'),
+            'administrative_area_level_1' => Yii::t('app', 'Administrative Area (e.g. Bavaria)'),
+            'administrative_area_level_2' => Yii::t('app', 'Sub Administrative Area (e.g. Lower Franconia)'),
+            'administrative_area_level_3' => Yii::t('app', 'Administrative Locality (e.g. Würzburg'),
             'locality' => Yii::t('app', 'Locality'),
             'sublocality' => Yii::t('app', 'Sublocality'),
             'latitude' => Yii::t('app', 'Latitude'),
             'longitude' => Yii::t('app', 'Longitude'),
-            'horizontalAccuracy' => Yii::t('app', 'Horizontal Accuracy'),
-            'altitude' => Yii::t('app', 'Altitude'),
-            'verticalAccuracy' => Yii::t('app', 'Vertical Accuracy'),
+            'horizontalAccuracy' => Yii::t('app', 'horizontal Accuracy [m]'),
+            'altitude' => Yii::t('app', 'Altitude [m]'),
+            'verticalAccuracy' => Yii::t('app', 'vert. Accuracy[m]'),
             'beginDate' => Yii::t('app', 'Begin Date'),
             'endDate' => Yii::t('app', 'End Date'),
-            'legit' => Yii::t('app', 'gesammelt von'),
+            'legit' => Yii::t('app', 'Sampled by (legit)'),
             'localityName' => Yii::t('app', 'Name of locality'),
             'localityDescription' => Yii::t('app', 'Locality Description'),
             'localityPrefix' => Yii::t('app', 'Locality Prefix'),

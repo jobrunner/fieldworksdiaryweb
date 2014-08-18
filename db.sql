@@ -115,7 +115,9 @@ CREATE TABLE `specimen` (
   `horizontalAccuracy` int(6) DEFAULT NULL,
   `altitude` smallint(5) DEFAULT NULL,
   `verticalAccuracy` smallint(5) DEFAULT NULL,
+  `idAllday` enum('Y','N') NOT NULL DEFAULT 'N',
   `beginDate` datetime NOT NULL,
+  `isInDaylight` enum('Y','N') NOT NULL DEFAULT 'Y',
   `endDate` datetime DEFAULT NULL,
   `legit` varchar(200) DEFAULT NULL COMMENT 'gesammelt von',
   `localityName` varchar(200) DEFAULT NULL COMMENT 'Name of locality',
@@ -142,4 +144,4 @@ CREATE TABLE `specimen` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-08-17 18:34:06
+-- Dump completed on 2014-08-17 21:46:44

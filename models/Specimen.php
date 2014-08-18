@@ -23,7 +23,9 @@ use Yii;
  * @property integer $horizontalAccuracy
  * @property integer $altitude
  * @property integer $verticalAccuracy
+ * @property string $idAllday
  * @property string $beginDate
+ * @property string $isInDaylight
  * @property string $endDate
  * @property string $legit
  * @property string $localityName

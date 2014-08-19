@@ -82,7 +82,7 @@ class Specimen extends \yii\db\ActiveRecord
     // and automatically retrieving data
     public $inputFormat = 'geodeticdecimal';
     public $geoCodeLanguage = 'en';
-
+    public $utm;
     /**
      * @inheritdoc
      */

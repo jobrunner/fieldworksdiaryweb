@@ -3,6 +3,7 @@ namespace app\components;
 
 use yii\base\Behavior;
 use yii\db\ActiveRecord;
+use \Mett\UUID;
 
 class UuidBehavior extends Behavior
 {
@@ -27,15 +28,11 @@ class UuidBehavior extends Behavior
 
         foreach ($attributes as $attributeName) {
             if ($model->isNewRecord && empty($model[$attributeName])) {
-                $model[$attributeName] = \Mett\UUID::v4();
+                $model[$attributeName] = UUID::v4();
                 // error_log("New Specimen\'s attribute $attributeName was empty. Fixed to: " . $model[$attributeName]);
             }
         }
 
         return true;
     }
-
-
-
-
 }

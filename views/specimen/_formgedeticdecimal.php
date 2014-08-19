@@ -50,8 +50,8 @@ use yii\helpers\Url;
     ]); ?>
     <div class="col-lg-4">
         <?php
-        echo $form->field($model, 'geoCodeLanguage')->hiddenInput();
-        echo $form->field($model, 'inputFormat')->hiddenInput();
+        echo Html::activeHiddenInput($model, 'geoCodeLanguage');
+        echo Html::activeHiddenInput($model, 'inputFormat');
 
         if ($model->inputFormat == 'geodeticdecimal') {
 

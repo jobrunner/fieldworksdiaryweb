@@ -4,6 +4,9 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\bootstrap\ButtonDropdown;
 use yii\helpers\Url;
+use yii\web\View;
+
+$this->registerJs("$('#specimen-inputformat').on('change', function() {this.form.submit()});", View::POS_READY);
 
 
 /* @var $this yii\web\View */
@@ -14,7 +17,6 @@ use yii\helpers\Url;
 <div class="specimen-form">
 
     <div class="col-lg-4">
-
         <?php $form = ActiveForm::begin([
             'method' => 'GET',
         ]); ?>
@@ -26,20 +28,8 @@ use yii\helpers\Url;
                 'utm'             => 'UTM',
                 'mgrs'            => 'MGRS',
         ]);
-        echo $form->field($model, 'geoCodeLanguage')->dropDownList([
-                'en' => 'English names',
-                'de' => 'German names',
-                'fr' => 'French names',
-        ]);
-
-//        ['onchange'=>'this.form.submit()']
 
         ?>
-
-        <div class="form-group">
-            <?= Html::submitButton(Yii::t('app', 'Change Input format'), ['class' => 'btn btn-primary']) ?>
-            <?php #= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-        </div>
     </div>
     <?php ActiveForm::end(); ?>
 
@@ -49,6 +39,7 @@ use yii\helpers\Url;
 
     ]); ?>
     <div class="col-lg-4">
+        <div class="form-group">
         <?php
         echo Html::activeHiddenInput($model, 'geoCodeLanguage');
         echo Html::activeHiddenInput($model, 'inputFormat');
@@ -70,9 +61,16 @@ use yii\helpers\Url;
             echo $form->field($model, 'mgrs')->textInput();
         }
         ?>
+        </div>
+        <div class="form-group">
+            <?= $form->field($model, 'geoCodeLanguage')->dropDownList([
+                'en' => 'English names',
+                'de' => 'German names',
+                'fr' => 'French names',
+            ])?>
+        </div>
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Lookup'), ['class' => 'btn btn-primary']) ?>
-            <?php #= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>
     </div>
 

@@ -2,16 +2,12 @@
 
 namespace app\controllers;
 
-use app\models\ReverseGeocodeForm;
 use Yii;
 use app\models\Specimen;
 use app\models\SpecimenSearch;
-use app\models\Location;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
-//use yii\rest\ActiveController;
 
 /**
  * SpecimenController implements the CRUD actions for Specimen model.
@@ -20,7 +16,6 @@ use yii\filters\VerbFilter;
 class SpecimenController extends Controller
 {
     public $modelClass = 'app\models\Specimen';
-
 
     public function behaviors()
     {

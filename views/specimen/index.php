@@ -26,25 +26,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'modelClass' => 'Specimen',
         ]), ['reverse-geocoding'], ['class' => 'btn btn-success']) ?>
 
-
-        <?php
-        /*
-            echo ButtonDropdown::widget([
-            'label' => 'Create form Coordinates',
-            'dropdown' => [
-                'items' => [
-                    ['label' => 'Geodetic decimal', 'url' => Url::toRoute(['create-from-reverse-geocoding',
-                                                                           'latitude' => '9.0',
-                                                                           'longitude' => 49.0,
-                                                                           'language' => 'en'])],
-                    ['label' => 'Geodetic degrees', 'url' => '#'],
-                    ['label' => 'UTM', 'url' => '#'],
-                    ['label' => 'MGRS', 'url' => '#'],
-                ],
-            ],
-        ]);
-        */
-        ?>
         <?= Html::a(Yii::t('app', 'Calendar'), ['calendar'], ['class' => 'btn btn-primary']) ?>
 
     </p>

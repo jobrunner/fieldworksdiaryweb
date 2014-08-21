@@ -185,7 +185,7 @@ class Specimen extends \yii\db\ActiveRecord
         // Last step then is to search the geo location in reverse way by coordinates.
         if ($this->inputFormat == 'geodeticdecimal') {
 
-            $this->_findLocation();
+            $this->_findLocationByGeonames();
         } else {
 
             return false;
@@ -226,7 +226,40 @@ class Specimen extends \yii\db\ActiveRecord
         return $events;
     }
 
+    /**
+     * Reverse geolocation with geonames json api based upon OSM datasets.
+     * @return $this
+     */
+    protected function _findLocationByGeonames()
+    {
+        $lat      = $this->latitude;
+        $lng      = $this->longitude;
+        $language = $this->geoCodeLanguage;
 
+        $curl   = curl_init(sprintf('http://api.geonames.org/findNearbyPlaceNameJSON?formatted=true&lat=%f&lng=%f&style=full&lang=%s&username=%s', $lat, $lng, $language, 'demo'));
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+        $result = curl_exec($curl) ;
+        curl_close($curl);
+
+        $result = array_shift(json_decode($result)->geonames);
+
+        $this->country                     = $result->countryName;
+        $this->countryCodeIso              = $result->countryCode;
+        $this->administrative_area_level_1 = $result->adminName1;
+        $this->administrative_area_level_2 = $result->adminName2;
+        $this->administrative_area_level_3 = $result->adminName3;
+        $this->locality                    = $result->adminName4;
+        $this->sublocality                 = $result->adminName5;
+
+        return $this;
+    }
+
+
+    /**
+     * Reverse geolocation with google reverse geolocation api.
+     *
+     * @return $this
+     */
     protected function _findLocation()
     {
         $lat      = $this->latitude;

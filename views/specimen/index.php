@@ -20,11 +20,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('app', 'Create {modelClass}', [
             'modelClass' => 'Specimen',
-        ]), ['create'], ['class' => 'btn btn-success']) ?>
+        ]), ['create'], ['class' => 'btn btn-primary']) ?>
 
         <?= Html::a(Yii::t('app', 'Create {modelClass} from Coordinates', [
             'modelClass' => 'Specimen',
-        ]), ['reverse-geocoding'], ['class' => 'btn btn-success']) ?>
+        ]), ['reverse-geocoding'], ['class' => 'btn btn-primary']) ?>
 
         <?= Html::a(Yii::t('app', 'Calendar'), ['calendar'], ['class' => 'btn btn-primary']) ?>
 

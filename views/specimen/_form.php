@@ -56,6 +56,11 @@ use dosamigos\datepicker\DatePicker;
             <?= $form->field($model, 'mgrs')->textInput(['maxlength' => 18]) ?>
         </div>
 
+        <div class="col-lg-12">
+            <?= $form->field($model, 'allDay')->checkbox() ?>
+        </div>
+
+
         <div class="col-lg-6">
             <?= $form->field($model, 'beginDate')->widget(
                 DatePicker::className(), [

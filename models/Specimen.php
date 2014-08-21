@@ -27,7 +27,7 @@ use Yii;
  * @property integer $verticalAccuracy
  * @property string $allDay
  * @property string $beginDate
- * @property string $isInDaylight
+ * @property string $duringNight
  * @property string $endDate
  * @property string $legit
  * @property string $localityName
@@ -183,7 +183,6 @@ class Specimen extends \yii\db\ActiveRecord
         // Next step would be to convert coodinates in inputFormat to
         // geodetic decimal (WGS84) that is the standard coordinate format.
         // Last step then is to search the geo location in reverse way by coordinates.
-
         if ($this->inputFormat == 'geodeticdecimal') {
 
             $this->_findLocation();

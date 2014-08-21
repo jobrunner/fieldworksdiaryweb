@@ -62,6 +62,33 @@ class SpecimenController extends Controller
     }
 
     /**
+     * Displays a calendar with specimens as events.
+     * @return string
+     */
+    public function actionCalendar()
+    {
+        return $this->render('calendar');
+    }
+
+    /**
+     * Returns an json array with all specimens as events in the requested data range
+     *
+     * @param null $start   start of date range
+     * @param null $end     end of date range
+     * @return     string   json array with specimens down stripped as event objects
+     */
+    public function actionEvents($start = null, $end = null)
+    {
+        $model = new Specimen();
+
+        $models = $model->findManyAsFullcalendarEvents($start, $end);
+
+        echo json_encode($models);
+        exit;
+    }
+
+
+    /**
      * Creates a new Specimen model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed

@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "2amigos/yii2-date-picker-widget" : "*",
         "kartik-v/yii2-widgets": "2.8.0",
-        "tecnick.com/tcpdf": "6.0.090"
+        "tecnick.com/tcpdf": "6.0.090",
+        "thiagotalma/yii2-fullcalendar": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

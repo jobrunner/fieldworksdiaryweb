@@ -4,6 +4,8 @@ namespace app\models;
 
 use app\components\UuidBehavior;
 use \yii\db\ActiveRecord;
+use \yii\data\SqlDataProvider;
+
 use Yii;
 
 /**
@@ -23,7 +25,7 @@ use Yii;
  * @property integer $horizontalAccuracy
  * @property integer $altitude
  * @property integer $verticalAccuracy
- * @property string $idAllday
+ * @property string $allDay
  * @property string $beginDate
  * @property string $isInDaylight
  * @property string $endDate
@@ -192,6 +194,39 @@ class Specimen extends \yii\db\ActiveRecord
 
         return true;
     }
+
+    public function findManyAsFullcalendarEvents($beginDate, $endDate)
+    {
+        $connection = Yii::$app->db;
+        $models     = $connection->createCommand('SELECT id,
+                                                         localityName,
+                                                         specimenId,
+                                                         beginDate,
+                                                         endDate,
+                                                         allDay
+                                                    FROM specimen
+                                                   WHERE beginDate BETWEEN :beginDate AND :endDate', [
+            ':beginDate' => $beginDate,
+            ':endDate'   => $endDate
+        ])->queryAll();
+
+        $events = [];
+
+        foreach ($models as $model) {
+            $events[] = [
+                'id'     => $model['id'],
+                'title'  => $model['localityName'] . "\n" . $model['specimenId'],
+                'start'  => $model['beginDate'],
+                'end'    => $model['endDate'],
+                // let the view simple and without viewing the time
+                'allDay' => true, // ($model['allDay'] == 'Y') ? true : false,
+                'url'    => Yii::$app->urlManager->createUrl(['specimen/view', 'id' => $model['id']])
+            ];
+        }
+
+        return $events;
+    }
+
 
     protected function _findLocation()
     {

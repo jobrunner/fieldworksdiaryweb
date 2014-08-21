@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d617221f3e24ee44ed49d4e470152202",
+    "hash": "193d3e779d31991d0a2c440ce3b6430a",
     "packages": [
         {
             "name": "2amigos/yii2-date-picker-widget",
@@ -495,17 +495,62 @@
             "time": "2014-08-08 11:41:02"
         },
         {
+            "name": "thiagotalma/yii2-fullcalendar",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thiagotalma/yii2-talma-fullcalendar-widget.git",
+                "reference": "d435f7faba081c072888bb39e8d8d8287dd1115c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thiagotalma/yii2-talma-fullcalendar-widget/zipball/d435f7faba081c072888bb39e8d8d8287dd1115c",
+                "reference": "d435f7faba081c072888bb39e8d8d8287dd1115c",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "talma\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Thiago Talma",
+                    "email": "thiago@thiagomt.com",
+                    "homepage": "http://www.thiagomt.com/"
+                }
+            ],
+            "description": "Widget for Yii Framework 2.0 to use FullCalendar",
+            "homepage": "https://github.com/thiagotalma/yii2-talma-fullcalendar-widget",
+            "keywords": [
+                "calendar",
+                "extension",
+                "fullcalendar",
+                "widget",
+                "yii2"
+            ],
+            "time": "2014-07-30 05:23:32"
+        },
+        {
             "name": "twbs/bootstrap",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "31f7cb152efbc22ea61801915d81ba2b13435f97"
+                "reference": "c95aa97c03fc676f7b53d002c7c8a3bb59fd6747"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/31f7cb152efbc22ea61801915d81ba2b13435f97",
-                "reference": "31f7cb152efbc22ea61801915d81ba2b13435f97",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/c95aa97c03fc676f7b53d002c7c8a3bb59fd6747",
+                "reference": "c95aa97c03fc676f7b53d002c7c8a3bb59fd6747",
                 "shasum": ""
             },
             "replace": {
@@ -543,7 +588,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2014-08-15 18:52:50"
+            "time": "2014-08-19 03:06:02"
         },
         {
             "name": "yiisoft/jquery",
@@ -600,12 +645,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "fd8282072b195feaa2429815eedaa9c5ffcae4fd"
+                "reference": "0cd5563315029ab9d40533c15533868fe45dbb9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/fd8282072b195feaa2429815eedaa9c5ffcae4fd",
-                "reference": "fd8282072b195feaa2429815eedaa9c5ffcae4fd",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/0cd5563315029ab9d40533c15533868fe45dbb9f",
+                "reference": "0cd5563315029ab9d40533c15533868fe45dbb9f",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +718,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-08-17 02:30:28"
+            "time": "2014-08-18 19:27:01"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -847,12 +892,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-codeception.git",
-                "reference": "b20673b381a6f3c3180ec8b6f1ba11e3572a6938"
+                "reference": "b3caa390756f2c5520ebfb15956490db89276dd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/b20673b381a6f3c3180ec8b6f1ba11e3572a6938",
-                "reference": "b20673b381a6f3c3180ec8b6f1ba11e3572a6938",
+                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/b3caa390756f2c5520ebfb15956490db89276dd1",
+                "reference": "b3caa390756f2c5520ebfb15956490db89276dd1",
                 "shasum": ""
             },
             "require": {
@@ -879,7 +924,7 @@
                 "codeception",
                 "yii2"
             ],
-            "time": "2014-07-29 22:40:46"
+            "time": "2014-08-17 14:45:58"
         },
         {
             "name": "yiisoft/yii2-debug",

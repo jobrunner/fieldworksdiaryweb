@@ -45,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ]);
         */
         ?>
+        <?= Html::a(Yii::t('app', 'Calendar'), ['calendar'], ['class' => 'btn btn-primary']) ?>
 
     </p>
 

@@ -22,7 +22,7 @@ use dosamigos\datepicker\DatePicker;
         <?php //= $form->field($model, 'id')->textInput(['maxlength' => 48]) ?>
         <?= $form->field($model, 'specimenId')->textInput(['maxlength' => 20]) ?>
         <?= $form->field($model, 'localityName')->textInput(['maxlength' => 200]) ?>
-        <?= $form->field($model, 'country')->dropDownList(['Germany', 'Spain']); ?>
+        <?= $form->field($model, 'country')->dropDownList(['Germany' => 'Germany', 'Spain' => 'Spain']); ?>
         <?= $form->field($model, 'countryCodeIso')->textInput(['maxlength' => 2]) ?>
         <?= $form->field($model, 'administrative_area_level_1')->textInput(['maxlength' => 200]) ?>
         <?= $form->field($model, 'administrative_area_level_2')->textInput(['maxlength' => 200]) ?>
